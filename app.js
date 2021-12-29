@@ -9,7 +9,8 @@ const processaCancelamento = async () => {
   try {
     let retorno = [];  
     for(const venda of vendas) {
-      const cancelamento = await cancelamentoService.cancelamentoTitulo(cancelamentoDTO(venda));
+      const vendaDTO = cancelamentoDTO(venda);
+      const cancelamento = await cancelamentoService.cancelamentoTitulo(vendaDTO);
       if (cancelamento) {
         qtdCancelamento++;
         console.log(`Total de Vendas canceladas... ${qtdCancelamento}`);
@@ -19,7 +20,7 @@ const processaCancelamento = async () => {
     }
     fs.writeFileSync('cancelamento.json',JSON.stringify(retorno));
   } catch (error) {
-    console.log('Error', JSONS.stringify(error));
+    console.log('Error', JSON.stringify(error));
   }
 };
 
