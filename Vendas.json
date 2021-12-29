@@ -1,0 +1,32 @@
+[
+    {
+        "idTitulo": 1625616,
+        "NumeroContratoFinanciamento": "2309000016335",
+        "dataDebito": "2021-12-23",
+        "cpfCnpj": 83789728870
+    },
+    {
+        "idTitulo": 1625617,
+        "NumeroContratoFinanciamento": "2309000016336",
+        "dataDebito": "2021-12-23",
+        "cpfCnpj": 83789728870
+    },
+    {
+        "idTitulo": 1625618,
+        "NumeroContratoFinanciamento": "2309000016337",
+        "dataDebito": "2021-12-23",
+        "cpfCnpj": 83789728870
+    },
+    {
+        "idTitulo": 1625619,
+        "NumeroContratoFinanciamento": "2309000016338",
+        "dataDebito": "2021-12-23",
+        "cpfCnpj": 83789728870
+    },
+    {
+        "idTitulo": 1625620,
+        "NumeroContratoFinanciamento": "2309000016339",
+        "dataDebito": "2021-12-23",
+        "cpfCnpj": 83789728870
+    }
+]
