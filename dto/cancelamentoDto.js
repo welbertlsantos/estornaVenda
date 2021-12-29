@@ -1,7 +1,7 @@
 const {contaCorrentes} = require('../config/contas');
 
 exports.cancelamentoDTO = ({idTitulo, dataDebito, cpfCnpj}) => {
-  const conta = contaCorrentes.find((conta) => conta.cpfCnpj === cpfCnpj);
+  const conta = contaCorrentes.find((conta) => conta.cpfCnpj == cpfCnpj);
   
   return {
     idTitulo: idTitulo,

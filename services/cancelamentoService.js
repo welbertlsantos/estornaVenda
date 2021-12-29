@@ -11,7 +11,6 @@ exports.cancelamentoTitulo = async (cancelamento) => {
     });
     return resultCancelamento;
   } catch (error) {
-    console.log('@cancelamentoTitulo', error);
     throw error(error);
   }
 };

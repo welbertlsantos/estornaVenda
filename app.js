@@ -8,29 +8,18 @@ let qtdCancelamento = 0;
 const processaCancelamento = async () => {
   try {
     let retorno = [];  
-    const intervaloCancelamento = setInterval(async () => {
-      for(const venda of vendas) {
-        console.log('Iniciando cancelamento.....');
-        cancelamentoService.cancelamentoTitulo(cancelamentoDTO(venda))
-          .then((result) => {
-            qtdCancelamento++;
-            console.log(`Total de Vendas canceladas... ${qtdVendaRealizada}`);
-            console.log(`Cancelamento Titulo ......... ${result.data.idTitulo}`);
-            retorno.push({idTitulo: result.data.idTitulo});
-
-            if (qtdCancelamento > vendas.length) {
-              console.log("Interrompendo a execução...");
-              clearInterval(intervaloCancelamento);
-              fs.writeFileSync('cancelamento.json',JSON.stringify(retorno));
-            } 
-          })
-          .catch(() => {
-            console.log('Erro do processo de cancelamento...');
-          })
+    for(const venda of vendas) {
+      const cancelamento = await cancelamentoService.cancelamentoTitulo(cancelamentoDTO(venda));
+      if (cancelamento) {
+        qtdCancelamento++;
+        console.log(`Total de Vendas canceladas... ${qtdCancelamento}`);
+        console.log(`Cancelamento Titulo ......... ${cancelamento.data.idTitulo}`);
+        retorno.push({idTitulo: cancelamento.data.idTitulo});
       }
-    }, 7000);
+    }
+    fs.writeFileSync('cancelamento.json',JSON.stringify(retorno));
   } catch (error) {
-    console.log('Error', error);
+    console.log('Error', JSONS.stringify(error));
   }
 };
 
