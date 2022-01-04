@@ -23,5 +23,4 @@ exports.cancelamentoDTO = ({idTitulo, dataDebito, cpfCnpj}) => {
     codTipoAtendimento: '1',
     idParceiro: 4
   }
-
 };
